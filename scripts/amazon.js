@@ -1,3 +1,4 @@
+//Html Code Generator (Products Generated)
 let html_code='';
 
 products.forEach((product)=>{
