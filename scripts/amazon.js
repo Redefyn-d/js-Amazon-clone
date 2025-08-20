@@ -1,4 +1,7 @@
-//Html Code Generator (Products Generated)
+import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
+
+//Html Code Generator (Products Generated)  
 let html_code='';
 
 products.forEach((product)=>{
