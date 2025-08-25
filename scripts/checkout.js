@@ -5,7 +5,7 @@ import {moneyCal} from './utils/money.js';
 
 let summaryHTML='';
 cart.forEach((cartItem)=>{
-    const productId=cartItem.ProductId;
+    const productId=cartItem.productId;
     let matchingProduct;    
     products.forEach((product)=>{
         if(productId === product.id){
@@ -14,7 +14,7 @@ cart.forEach((cartItem)=>{
     })
     summaryHTML+= 
         `
-            <div class="cart-item-container js-checkout-item-${matchingProduct.id}">
+            <div class="cart-item-container js-checkout-items-${matchingProduct.id}">
                 <div class="delivery-date">
                 Delivery date: Tuesday, June 21
                 </div>
@@ -99,6 +99,7 @@ document.querySelectorAll(".js-delete-link").forEach((link)=>{
     link.addEventListener('click',()=>{
         const productId = link.dataset.productId;
         removeFromCart(productId);
-        document.querrySelector(`.js-checkout-item-${productId}`).remove();
+        let container = document.querySelector(`.js-checkout-items-${productId}`);
+        container.remove();
     });
 })
