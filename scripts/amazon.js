@@ -1,4 +1,4 @@
-import {cart,addToCart} from '../data/cart.js';
+import {cart,addToCart,cartCount} from '../data/cart.js';
 import {products} from '../data/products.js';
 import { moneyCal } from './utils/money.js';
 
@@ -59,13 +59,9 @@ products.forEach((product)=>{
 });
 
 document.querySelector(".js-products-grid").innerHTML=html_code;
-
-function cartCount(){
-  let cartQuantity=0;
-        cart.forEach((product)=>{
-            cartQuantity+=product.quantity;
-        });
-        document.querySelector(".js-cart-quantity").innerHTML=cartQuantity;
+cartItemCount();
+function cartItemCount(){
+  document.querySelector(".js-cart-quantity").innerHTML=cartCount();
 }
 
 document.querySelectorAll(".js-add-to-cart").forEach((button)=>{
@@ -74,6 +70,6 @@ document.querySelectorAll(".js-add-to-cart").forEach((button)=>{
         const product_increement=Number(document.querySelector(`.js-quantity-selector-${productId}`).value);
 
         addToCart(productId,product_increement);
-        cartCount();
+        cartItemCount();
     });
 });

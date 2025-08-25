@@ -1,4 +1,4 @@
-import {cart,removeFromCart} from '../data/cart.js';
+import {cart,removeFromCart,cartCount} from '../data/cart.js';
 import { products } from '../data/products.js';
 import {moneyCal} from './utils/money.js';
 
@@ -103,3 +103,5 @@ document.querySelectorAll(".js-delete-link").forEach((link)=>{
         container.remove();
     });
 })
+
+document.querySelector(".js-cart-quantity-head").innerHTML= cartCount();
