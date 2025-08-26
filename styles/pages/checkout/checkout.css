@@ -14,6 +14,27 @@
   margin-right: auto;
 }
 
+.quantity-input{
+  width: 30px;
+}
+/* hide by default */
+.quantity-input,
+.save-quantity-link {
+  display: none;
+}
+
+/* show input + save only when parent has editing state */
+.is-editing-quantity .quantity-input,
+.is-editing-quantity .save-quantity-link {
+  display: inline-block;
+}
+
+/* optional: hide update while editing */
+.is-editing-quantity .update-quantity-link {
+  display: none;
+}
+
+
 .page-title {
   font-weight: 700;
   font-size: 22px;
