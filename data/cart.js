@@ -40,7 +40,7 @@ export function addToCart(productId,product_increement){
         cart.push({
             productId,
             quantity:product_increement,
-            deliveryOptionsId: '1'
+            deliveryOptionId: '1'
         })
     }
     saveToStorage();
@@ -75,7 +75,6 @@ export function updateQuantity(productId, newQuantity) {
   });
 
   matchingItem.quantity = newQuantity;
-  console.log(matchingItem.quantity);
   saveToStorage();
 }
 
