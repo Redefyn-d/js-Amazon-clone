@@ -1,3 +1,3 @@
 export function moneyCal (PriceCents){
-    return((PriceCents/100).toFixed(2));
+    return(Math.round(PriceCents)/100).toFixed(2);
 }
