@@ -18,7 +18,7 @@ cart.forEach((cartItem)=>{
 
     summaryHTML+= 
         `
-            <div class="cart-item-container js-checkout-items-${matchingProduct.id} ">
+            <div class="cart-item-container js-checkout-items-${matchingProduct.id} js-cart-item-container">
                 <div class="delivery-date">
                 Delivery date: ${formatedDate}
                 </div>
@@ -34,7 +34,7 @@ cart.forEach((cartItem)=>{
                     <div class="product-price">
                     ${moneyCal(matchingProduct.priceCents)} 
                     </div>
-                    <div class="product-quantity js-cart-item-container-${matchingProduct.id}">
+                    <div class="product-quantity js-product-quantity-${matchingProduct.id} js-cart-item-container-${matchingProduct.id}">
                     <span>
                         Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
                     </span>
